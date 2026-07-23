@@ -1,28 +1,22 @@
 #include <iostream>
 #include <vector>
 
-// Function to perform Insertion Sort
 void insertionSort(std::vector<int>& arr) {
     int n = arr.size();
     
-    // Start from the second element (index 1)
     for (int i = 1; i < n; i++) {
         int key = arr[i]; // The element to be positioned
         int j = i - 1;
 
-        // Shift elements of arr[0..i-1] that are greater than key
-        // to one position ahead of their current position
         while (j >= 0 && arr[j] > key) {
             arr[j + 1] = arr[j];
             j--;
         }
         
-        // Insert the key at its correct position
         arr[j + 1] = key;
     }
 }
 
-// Function to print the array
 void printArray(const std::vector<int>& arr) {
     for (int num : arr) {
         std::cout << num << " ";
