@@ -1,39 +1,16 @@
-#include <iostream>
-#include <vector>
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
 
-void insertionSort(std::vector<int>& arr) {
-    int n = arr.size();
-    
-    for (int i = 1; i < n; i++) {
-        int key = arr[i]; // The element to be positioned
-        int j = i - 1;
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
 
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        
-        arr[j + 1] = key;
-    }
-}
+        arr[j + 1] = key
 
-void printArray(const std::vector<int>& arr) {
-    for (int num : arr) {
-        std::cout << num << " ";
-    }
-    std::cout << std::endl;
-}
+    return arr
 
-int main() {
-    std::vector<int> data = {12, 11, 13, 5, 6};
-    
-    std::cout << "Original array: ";
-    printArray(data);
 
-    insertionSort(data);
-
-    std::cout << "Sorted array:   ";
-    printArray(data);
-
-    return 0;
-}
+arr = [64, 34, 25, 12, 22, 11, 90]
+print("Sorted Array:",insertion_sort(arr))
