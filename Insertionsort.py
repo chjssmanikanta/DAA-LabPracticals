@@ -12,5 +12,5 @@ def insertion_sort(arr):
     return arr
 
 
-arr = [64, 34, 25, 12, 22, 11, 90]
+arr = [12,11,13,5,6]
 print("Sorted Array:",insertion_sort(arr))
